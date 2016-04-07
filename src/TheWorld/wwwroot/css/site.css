@@ -64,10 +64,10 @@ input[type=text], input[type=password], textarea {
 
     #sidebar.hide-sidebar {
         left: -250px;
-        -moz-transition: left ease .25s;
-        -o-transition: left ease .25s;
-        -webkit-transition: left ease .25s;
-        transition: left ease .25s;
+        -moz-transition: margin-left ease .25s;
+        -o-transition: margin-left ease .25s;
+        -webkit-transition: margin-left ease .25s;
+        transition: margin-left ease .25s;
     }
 
 #wrapper {
