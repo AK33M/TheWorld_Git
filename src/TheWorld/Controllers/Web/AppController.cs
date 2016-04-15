@@ -2,6 +2,8 @@
 using System;
 using TheWorld.Services;
 using TheWorld.ViewModels;
+using System.Linq;
+using TheWorld.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,16 +12,20 @@ namespace TheWorld.Controllers.Web
     public class AppController : Controller
     {
         private IMailService _mailService;
+        private IWorldRepository _repository;
 
-        public AppController(IMailService service)
+        public AppController(IMailService service, IWorldRepository repository)
         {
             _mailService = service;
+            _repository = repository;
         }
 
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            var trips = _repository.GetAllTrips();
+
+            return View(trips);
         }
     
         public IActionResult About()
