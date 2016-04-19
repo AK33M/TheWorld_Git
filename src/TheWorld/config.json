@@ -1,6 +1,7 @@
 {
   "AppSettings": {
-    "SiteEmailAddress": "me@aol.com"
+    "SiteEmailAddress": "me@aol.com",
+    "BingKey" :  "AHAHAHAHAHAHAHAHAHAHFOOLEDYOU!"
   },
   "Data": {
     "WorldContextConnection": "Data Source=DEVELOPMENT04\\MSSQLSERVER2014;Initial Catalog=TheWorldDB;Integrated Security=True"
