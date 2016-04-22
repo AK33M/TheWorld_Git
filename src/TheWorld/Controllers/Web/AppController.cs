@@ -4,6 +4,7 @@ using TheWorld.Services;
 using TheWorld.ViewModels;
 using System.Linq;
 using TheWorld.Models;
+using Microsoft.AspNet.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,11 +24,17 @@ namespace TheWorld.Controllers.Web
         // GET: /<controller>/
         public IActionResult Index()
         {
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult Trips()
+        {
             var trips = _repository.GetAllTrips();
 
             return View(trips);
         }
-    
+
         public IActionResult About()
         {
             return View();
