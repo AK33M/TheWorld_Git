@@ -26,7 +26,7 @@
                 model.errorMessage = "Failed to load data: " + error;
             })
             .finally(function () {
-                model.isBusy = true;
+                model.isBusy = false;
             });
 
         model.addTrip = function () {
