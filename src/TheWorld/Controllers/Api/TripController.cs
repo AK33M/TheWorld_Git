@@ -17,18 +17,18 @@ namespace TheWorld.Controllers.Api
     public class TripController : Controller
     {
         private ILogger<TripController> _logger;
-        private IWorldRepository _repoository;
+        private IWorldRepository _repository;
 
         public TripController(IWorldRepository repository, ILogger<TripController> logger)
         {
             _logger = logger;
-            _repoository = repository;
+            _repository = repository;
         }
 
         [HttpGet("")]
         public JsonResult Get()
         {
-            var trips = _repoository.GetUserTripsWithStops(User.Identity.Name);
+            var trips = _repository.GetUserTripsWithStops(User.Identity.Name);
             var results = Mapper.Map<IEnumerable<TripViewModel>>(trips);
 
             return Json(results);
@@ -45,9 +45,9 @@ namespace TheWorld.Controllers.Api
 
                     //Save to the database
                     _logger.LogInformation("Attempting to save a new trip");
-                    _repoository.AddTrip(newTrip);
+                    _repository.AddTrip(newTrip, User.Identity.Name);
 
-                    if (_repoository.SaveAll())
+                    if (_repository.SaveAll())
                     {
                         Response.StatusCode = (int)HttpStatusCode.Created;
                         return Json(Mapper.Map<TripViewModel>(newTrip));

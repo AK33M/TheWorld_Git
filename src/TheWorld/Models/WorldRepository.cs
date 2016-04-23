@@ -26,8 +26,9 @@ namespace TheWorld.Models
             //_context.Stops.Add(newStop);
         }
 
-        public void AddTrip(Trip newTrip)
+        public void AddTrip(Trip newTrip, string userName)
         {
+            newTrip.UserName = userName;
             _context.Add(newTrip);
         }
 
