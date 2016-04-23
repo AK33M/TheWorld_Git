@@ -20,7 +20,7 @@ namespace TheWorld.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connString = Startup.Configuration["Data:WorldContextConnection"];
+            var connString = Startup.Configuration["Data:WorldContextConnectionHOME"];
 
             optionsBuilder.UseSqlServer(connString);
 

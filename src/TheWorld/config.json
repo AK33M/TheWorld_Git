@@ -4,6 +4,7 @@
     "BingKey" :  "AHAHAHAHAHAHAHAHAHAHFOOLEDYOU!"
   },
   "Data": {
-    "WorldContextConnection": "Data Source=DEVELOPMENT04\\MSSQLSERVER2014;Initial Catalog=TheWorldDB;Integrated Security=True"
+    "WorldContextConnection": "Data Source=DEVELOPMENT04\\MSSQLSERVER2014;Initial Catalog=TheWorldDB;Integrated Security=True",
+    "WorldContextConnectionHOME": "Data Source=DESKTOP-35QACJU\\MSSQLSERVER2014;Initial Catalog=TheWorldDB;Integrated Security=True"
   }
 }
