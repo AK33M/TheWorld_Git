@@ -16,5 +16,6 @@ namespace TheWorld.ViewModels
         public double Latitude { get; set; }
         [Required]
         public DateTime Arrival { get; set; }
+        public int Order { get; set; }
     }
 }
